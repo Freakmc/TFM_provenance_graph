@@ -38,6 +38,7 @@ pip install -r requirements.txt
 - auditd activo en la máquina
 - Python 3.8 o superior
 - Google Chrome (si deseas exportar PNG desde graph.html)
+- Librería externa: auditdpythonparser
 
 ## 🕵️ Captura de LOGS
 
@@ -69,13 +70,12 @@ Esto generará:
 ```bash
 .
 ├─ capture.sh                 ← Script de captura raw auditd
-├─ provenance_from_auditd.py ← Script principal
-├─ auditdpythonparser.py     ← Parser auditd personalizado
-├─ check_columns.py          ← Verificador de columnas clave
+├─ provenance_from_auditd.py  ← Script principal
+├─ check_columns.py           ← Verificador de columnas clave
 ├─ sample_logs/
-│   └─ logs_auditd_raw.tar  ← Log real comprimido
-├─ graph.html                ← Visualización interactiva
-└─ graph_window.html         ← Subgrafo por tiempo
+│   └─ logs_auditd_raw.tar    ← Log real comprimido
+├─ graph.html                 ← Visualización interactiva
+└─ graph_window.html          ← Subgrafo por tiempo
 ```
 ## 📌 Detalles técnicos
 
