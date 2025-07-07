@@ -1,0 +1,7 @@
+pandas
+networkx
+pyvis
+auditdpythonparser
+pathlib
+datetime
+re
