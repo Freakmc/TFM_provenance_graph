@@ -73,7 +73,7 @@ Esto generará:
 ├─ auditdpythonparser.py     ← Parser auditd personalizado
 ├─ check_columns.py          ← Verificador de columnas clave
 ├─ sample_logs/
-│   └─ logs_auditd_raw.txt.xz  ← Log real comprimido
+│   └─ logs_auditd_raw.tar  ← Log real comprimido
 ├─ graph.html                ← Visualización interactiva
 └─ graph_window.html         ← Subgrafo por tiempo
 ```
