@@ -33,16 +33,60 @@ cd auditd-provenance
 pip install -r requirements.txt
 ```
 
-## Requisitos adicionales:
+## ✏️ Requisitos adicionales:
+
 - auditd activo en la máquina
 - Python 3.8 o superior
 - Google Chrome (si deseas exportar PNG desde graph.html)
 
-CAPTURA DE LOGS
----------------
+## 🕵️ Captura de LOGS
 
 Ejecuta el siguiente script para capturar logs:
 
-   sudo ./capture.sh 60
-
+```bash
+sudo ./capture.sh 60
+```
 Esto capturará eventos auditd desde hace 60 horas y los guardará en logs_auditd_raw.txt
+
+## ⚙️ Análisis
+
+Ejecuta el script principal: provenance_from_auditd.py
+
+Esto generará:
+- graph.html: visualización interactiva
+- graph_window.html: subgrafo por tiempo
+- Alertas básicas por consola
+
+## 🔎 Verificar estructura del log
+
+Ejecuta el script principal: check_columns.py 
+Esto generará:
+- graph.html: visualización interactiva
+- graph_window.html: subgrafo por tiempo
+- Alertas básicas por consola
+
+## 📁 Estructura del proyecto
+```bash
+.
+├─ capture.sh                 ← Script de captura raw auditd
+├─ provenance_from_auditd.py ← Script principal
+├─ auditdpythonparser.py     ← Parser auditd personalizado
+├─ check_columns.py          ← Verificador de columnas clave
+├─ sample_logs/
+│   └─ logs_auditd_raw.txt.xz  ← Log real comprimido
+├─ graph.html                ← Visualización interactiva
+└─ graph_window.html         ← Subgrafo por tiempo
+```
+## 📌 Detalles técnicos
+
+- Basado en NetworkX + PyVis
+- Cada nodo tiene tipo (ntype), UID, PID, etc.
+- Alertas se colorean en rojo vivo
+- Física de grafo desactivada tras estabilización para facilitar el análisis
+
+##  📚 Créditos
+Trabajo de TFM dirigido por Juan Tapiador
+Parser auditd inspirado en auditdpythonparser
+
+## 🛡️ Disclaimer
+Este proyecto es educativo y orientado a análisis forense en entornos controlados. No está pensado para despliegue en producción sin mejoras adicionales de seguridad.
