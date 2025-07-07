@@ -33,7 +33,7 @@ cd auditd-provenance
 pip install -r requirements.txt
 ```
 
-## ✏️ Requisitos adicionales:
+## ✏️ Requisitos adicionales
 
 - auditd activo en la máquina
 - Python 3.8 o superior
