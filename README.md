@@ -86,6 +86,7 @@ Esto generará:
 
 ##  📚 Créditos
 Trabajo de TFM dirigido por Juan Tapiador
+
 Parser auditd inspirado en auditdpythonparser
 
 ## 🛡️ Disclaimer
