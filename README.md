@@ -31,7 +31,7 @@ Este proyecto genera un grafo de proveniencia a partir de logs crudos de `auditd
 git clone https://github.com/tu_usuario/auditd-provenance.git
 cd auditd-provenance
 pip install -r requirements.txt
-```bash
+```
 
 ## Requisitos adicionales:
 - auditd activo en la máquina
