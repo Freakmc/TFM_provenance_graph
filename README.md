@@ -53,6 +53,7 @@ Ejecuta el siguiente script para capturar logs:
 sudo ./capture.sh 60
 ```
 Esto capturará eventos auditd desde hace 60 horas y los guardará en logs_auditd_raw.txt
+![Comando para sacar los logs](comando%20para%20sacar%20los%20logs.png)
 
 
 ---
