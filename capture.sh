@@ -21,7 +21,7 @@ OUT="logs_auditd_raw.txt"
 echo "[*] Extrayendo logs de las últimas $HOURS_AGO horas..."
 
 # Extrae eventos desde hace N horas hasta ahora en formato raw
-ausearch --raw -ts now-${HOURS_AGO}h -te now > "$OUT"
+ausearch --raw --input-logs -ts now-${HOURS_AGO}h -te now > "$OUT"
 
 # Cambia la propiedad del archivo al usuario real que ejecutó sudo
 chown $(logname) "$OUT"
