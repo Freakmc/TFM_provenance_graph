@@ -17,7 +17,7 @@ Este proyecto genera un grafo de proveniencia a partir de logs crudos de `auditd
   - `EXEC`, `READ`, `WRITE`, `CREATE`
   - `CONNECT`: conexiones de red
   - `PARENT`: jerarquía entre procesos
-- Detecta comportamientos anómalos simples:
+- Detecta comportamientos anómalos simples entre otros:
   - Binarios sospechosos
   - Conexiones como root
   - IPs maliciosas
@@ -51,7 +51,7 @@ Ejecuta el siguiente script para capturar logs:
 ```bash
 sudo ./capture.sh 60
 ```
-Esto capturará eventos auditd desde hace 60 horas y los guardará en logs_auditd_raw.txt
+Esto capturará eventos auditd desde hace 60 horas y los guardará en logs_auditd_raw.txt. En su defecto puede seguir la guía de extracción de logs (recomendado)
 
 ---
 
@@ -60,7 +60,8 @@ Esto capturará eventos auditd desde hace 60 horas y los guardará en logs_audit
 Ejecuta el script principal: provenance_from_auditd.py
 
 Esto generará:
-- graph.html: visualización interactiva
+- ego_graph.html: visualización interactiva de las alertas
+- graph.html: visualización general interactiva
 - graph_window.html: subgrafo por tiempo
 - Alertas básicas por consola
 
@@ -70,10 +71,7 @@ Esto generará:
 ## 🔎 Verificar estructura del log
 
 Ejecuta el script principal: check_columns.py 
-Esto generará:
-- graph.html: visualización interactiva
-- graph_window.html: subgrafo por tiempo
-- Alertas básicas por consola
+Esto generará un análisis de la estructura de los logs extraidos
 
 
 ---
@@ -81,14 +79,14 @@ Esto generará:
 ## 📁 Estructura del proyecto
 ```bash
 .
-├─ capture.sh                 ← Script de captura raw auditd
-├─ provenance_from_auditd.py  ← Script principal
-├─ check_columns.py           ← Verificador de columnas clave
-├─ sample_logs/
-│   └─ logs_auditd_raw.tar    ← Log real comprimido
-├─ requirements.txt           ← Requisitos para el Script
-├─ graph.html                 ← Visualización interactiva
-└─ graph_window.html          ← Subgrafo por tiempo
+├─ capture.sh                             ← Script de captura raw auditd
+├─ provenance_from_auditd.py              ← Script principal
+├─ detectors.py                           ← Script secundario para detectar alertas
+├─ check_columns.py                       ← Verificador de columnas clave
+├─ sample_logs                            ← Ejemplos de logs reales 
+├─ requirements.txt                       ← Requisitos para el Script
+├─ guia de extraccion de logs auditd.md   ← Guía de extracción de logs
+└─ iocs.csv                               ← Ejemplo de archivo de iocs
 ```
 
 ---
